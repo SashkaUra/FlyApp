@@ -31,10 +31,10 @@ def download_data(min_lat, max_lat, min_lon, max_lon):
     
 def show_data(min_lat, max_lat, min_lon, max_lon):
     
-    myconn = mysql.connector.connect(host="localhost",
-                                     user="root",
-                                     password="Goedemorgen2021!",
-                                     database=db_name)
+    myconn = mysql.connector.connect(host=config.your_host,
+                                     user=config.user_ID,
+                                     password=config.passwd,
+                                     database= db_name)
     cursor = myconn.cursor()
     
     select_data_query = """
@@ -53,10 +53,10 @@ def show_data(min_lat, max_lat, min_lon, max_lon):
 
 def get_city(city):
     
-    myconn = mysql.connector.connect(host="localhost",
-                                     user="root",
-                                     password="Goedemorgen2021!",
-                                     database=db_name)
+    myconn = mysql.connector.connect(host=config.your_host,
+                                     user=config.user_ID,
+                                     password=config.passwd,
+                                     database= db_name)
     cursor = myconn.cursor()
     
     select_data_query = """
